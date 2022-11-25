@@ -23,21 +23,25 @@ window.onload = function() {
     "K"
   ];
   const figures = ["♦", "♥", "♠", "♣"];
-  const colors = ["red", "black"];
   const figure1 = document.querySelector(".figure1");
   const number = document.querySelector(".number");
   const figure2 = document.querySelector(".figure2");
   const btnChange = document.querySelector("#change-card");
 
-  const randomFigure = figures[Math.floor(Math.random() * 4)];
-  const randomColor = colors[Math.floor(Math.random() * 2)];
+  //const randomColor = colors[Math.floor(Math.random() * 2)];
   const changeColor = () => {
+    const randomFigure = figures[Math.floor(Math.random() * 4)];
     figure1.innerHTML = randomFigure;
     number.innerHTML = numbers[Math.floor(Math.random() * 13)];
     figure2.innerHTML = randomFigure;
 
-    figure1.style.color = randomColor;
-    figure2.style.color = randomColor;
+    if (randomFigure == "♣" || randomFigure == "♠") {
+      figure1.style.color = "black";
+      figure2.style.color = "black";
+    } else {
+      figure1.style.color = "red";
+      figure2.style.color = "red";
+    }
   };
 
   btnChange.addEventListener("click", changeColor);
