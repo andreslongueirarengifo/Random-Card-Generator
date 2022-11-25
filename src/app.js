@@ -27,9 +27,12 @@ window.onload = function() {
   const number = document.querySelector(".number");
   const figure2 = document.querySelector(".figure2");
   const btnChange = document.querySelector("#change-card");
+  const timer = document.querySelector("h1");
+  let count = 10;
 
   //const randomColor = colors[Math.floor(Math.random() * 2)];
-  const changeColor = () => {
+  const changeCard = () => {
+    count = 10;
     const randomFigure = figures[Math.floor(Math.random() * 4)];
     figure1.innerHTML = randomFigure;
     number.innerHTML = numbers[Math.floor(Math.random() * 13)];
@@ -44,5 +47,15 @@ window.onload = function() {
     }
   };
 
-  btnChange.addEventListener("click", changeColor);
+  btnChange.addEventListener("click", changeCard);
+  let counter = () => {
+    if (count > 0) {
+      timer.innerHTML = count;
+      count--;
+      setTimeout(counter, 1000);
+    }
+  };
+  counter();
+
+  setInterval(changeCard, 10000);
 };
