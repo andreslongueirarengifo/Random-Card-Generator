@@ -23,14 +23,17 @@ window.onload = function() {
     "K"
   ];
   const figures = ["♦", "♥", "♠", "♣"];
+  const cont = document.querySelector(".cont");
   const figure1 = document.querySelector(".figure1");
   const number = document.querySelector(".number");
   const figure2 = document.querySelector(".figure2");
   const btnChange = document.querySelector("#change-card");
+  const btnSize = document.querySelector("#change-size");
   const timer = document.querySelector("h1");
+  const width = document.querySelector("#width");
+  const heigth = document.querySelector("#height");
   let count = 10;
 
-  //const randomColor = colors[Math.floor(Math.random() * 2)];
   const changeCard = () => {
     count = 10;
     const randomFigure = figures[Math.floor(Math.random() * 4)];
@@ -48,6 +51,11 @@ window.onload = function() {
   };
 
   btnChange.addEventListener("click", changeCard);
+
+  btnSize.addEventListener("click", () => {
+    cont.style.width = `${width.value}px`;
+    cont.style.heigth = `${heigth.value}px`;
+  });
   let counter = () => {
     if (count > 0) {
       timer.innerHTML = count;
