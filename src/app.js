@@ -43,9 +43,11 @@ window.onload = function() {
 
     if (randomFigure == "♣" || randomFigure == "♠") {
       figure1.style.color = "black";
+      number.style.color = "black";
       figure2.style.color = "black";
     } else {
       figure1.style.color = "red";
+      number.style.color = "red";
       figure2.style.color = "red";
     }
   };
