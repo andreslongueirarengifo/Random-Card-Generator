@@ -56,7 +56,7 @@ window.onload = function() {
 
   btnSize.addEventListener("click", () => {
     cont.style.width = `${width.value}px`;
-    cont.style.heigth = `${heigth.value}px`;
+    cont.style.height = `${heigth.value}px`;
   });
   let counter = () => {
     if (count > 0) {
